@@ -158,31 +158,46 @@ namespace Demo
 
         #region Q6
 
-        public static void Main(string[] args)
-        {
-         ArrayList arrayList = new ArrayList();
-            for(int A= 0;A <= 10; A++ )
-                arrayList.Add(A);
-            Console.WriteLine("Before removing odd numbers: [" + string.Join(", ", arrayList.ToArray()) + "]");
-            oddnumbers(arrayList);
-            Console.WriteLine("After removing odd numbers: [" + string.Join(", ", arrayList.ToArray()) + "]");
+        //public static void Main(string[] args)
+        //{
+        // ArrayList arrayList = new ArrayList();
+        //    for(int A= 0;A <= 10; A++ )
+        //        arrayList.Add(A);
+        //    Console.WriteLine("Before removing odd numbers: [" + string.Join(", ", arrayList.ToArray()) + "]");
+        //    oddnumbers(arrayList);
+        //    Console.WriteLine("After removing odd numbers: [" + string.Join(", ", arrayList.ToArray()) + "]");
 
-        }
-        static ArrayList oddnumbers(ArrayList arr)
-        {
-            for (int i = arr.Count - 1; i >= 0; i--)
-            {
-                if (arr[i] is int Num  && Num % 2!=0)
-                {
-                arr.RemoveAt(i);
-                }
-            }
-          return arr;
-        }
-
+        //}
+        //static ArrayList oddnumbers(ArrayList arr)
+        //{
+        //    for (int i = arr.Count - 1; i >= 0; i--)
+        //    {
+        //        if (arr[i] is int Num  && Num % 2!=0)
+        //        {
+        //        arr.RemoveAt(i);
+        //        }
+        //    }
+        //  return arr;
+        //}
 
         #endregion
 
+        #region Q7
+        public static void Main(string[] args) 
+        {
+            Queue<object> Any = new Queue<object>();
+            Any.Enqueue(1);
+            Any.Enqueue("Apple");
+            Any.Enqueue(5.28);
+
+            foreach (var item in Any) { Console.WriteLine(item); }
+
+        }
+
+
+
+
+        #endregion
 
     }
 
