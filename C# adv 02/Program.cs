@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 namespace Demo 
 {
@@ -139,18 +140,45 @@ namespace Demo
         #endregion
 
         #region Q5
-        public static void Main(string[] args) 
+        //public static void Main(string[] args) 
+        //{
+        //    int[] arr = [1, 2, 3, 4, 5, 6, 6, 5, 4, 9, 10];
+        //HashSet<int> numbers = new HashSet<int>(arr);
+        //    foreach (int item in numbers) 
+        //    {
+        //        Console.WriteLine(item);
+        //    }
+
+        //}
+
+
+
+
+        #endregion
+
+        #region Q6
+
+        public static void Main(string[] args)
         {
-            int[] arr = [1, 2, 3, 4, 5, 6, 6, 5, 4, 9, 10];
-        HashSet<int> numbers = new HashSet<int>(arr);
-            foreach (int item in numbers) 
-            {
-                Console.WriteLine(item);
-            }
+         ArrayList arrayList = new ArrayList();
+            for(int A= 0;A <= 10; A++ )
+                arrayList.Add(A);
+            Console.WriteLine("Before removing odd numbers: [" + string.Join(", ", arrayList.ToArray()) + "]");
+            oddnumbers(arrayList);
+            Console.WriteLine("After removing odd numbers: [" + string.Join(", ", arrayList.ToArray()) + "]");
 
         }
-
-
+        static ArrayList oddnumbers(ArrayList arr)
+        {
+            for (int i = arr.Count - 1; i >= 0; i--)
+            {
+                if (arr[i] is int Num  && Num % 2!=0)
+                {
+                arr.RemoveAt(i);
+                }
+            }
+          return arr;
+        }
 
 
         #endregion
