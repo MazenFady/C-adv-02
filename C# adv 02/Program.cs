@@ -1,7 +1,8 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using static System.Runtime.InteropServices.JavaScript.JSType;
-namespace Demo 
+namespace Demo
 {
     internal class Program
     {
@@ -183,25 +184,74 @@ namespace Demo
         #endregion
 
         #region Q7
-        public static void Main(string[] args) 
+        //public static void Main(string[] args) 
+        //{
+        //    Queue<object> Any = new Queue<object>();
+        //    Any.Enqueue(1);
+        //    Any.Enqueue("Apple");
+        //    Any.Enqueue(5.28);
+
+        //    foreach (var item in Any) { Console.WriteLine(item); }
+
+        //}
+
+        #endregion
+
+        #region Q8
+        public static void Main(string[] args)
         {
-            Queue<object> Any = new Queue<object>();
-            Any.Enqueue(1);
-            Any.Enqueue("Apple");
-            Any.Enqueue(5.28);
+            #region Linked list
 
-            foreach (var item in Any) { Console.WriteLine(item); }
 
+            //    LinkedList<int> list = new LinkedList<int>([1,2,3,4,5,6,7,8,9,10]);
+
+            //    LinkedListNode<int> node = list.Find(5);
+
+            //    if(node != null)
+            //        Console.WriteLine("Target was found");
+            //else
+            //        Console.WriteLine("Target was not found");
+            #endregion
+
+
+            Stack<int> stack = new Stack<int>();
+            for (int i = 0; i <= 5; i++)
+            {
+                stack.Push(i);
+            }
+
+            Console.WriteLine("Enter the target to search for:");
+            if (!int.TryParse(Console.ReadLine(), out int target))
+            {
+                Console.WriteLine("Invalid input. Please enter a valid integer.");
+                return;
+            }
+
+            int count = 0;
+            bool found = false;
+            while (stack.Count > 0)
+            {
+                int current = stack.Pop();
+                count++;
+                if (current == target)
+                {
+                    Console.WriteLine($"Target was found successfully and the count = {count}");
+                    found = true;
+                    break;
+                }
+            }
+
+            if (!found)
+            {
+                Console.WriteLine("Target was not found");
+            }
         }
-
-
-
 
         #endregion
 
     }
 
-
-
 }
+    
+
 
