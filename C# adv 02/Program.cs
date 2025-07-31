@@ -37,30 +37,72 @@ namespace Demo
 
         #region Q2
         // 2. Given a number N and an array of N numbers.Determine if it's palindrome or not.
-        public static void Main() 
-        {
-            int N = int.Parse(Console.ReadLine()!);
-            int[] arr = Console.ReadLine()!.Split().Select(int.Parse).ToArray();
-            bool ispalindrome = true;
+        //public static void Main() 
+        //{
+        //    int N = int.Parse(Console.ReadLine()!);
+        //    int[] arr = Console.ReadLine()!.Split().Select(int.Parse).ToArray();
+        //    bool ispalindrome = true;
 
-            for (int i = 0; i < N /2;i++)
-            {
-                if (arr[i] != arr[ N - 1 - i ])
-                {
-                    ispalindrome = false;
-                    break;
-                }    
-            }
-            if (ispalindrome)
-            {
-                Console.WriteLine("YES");
-            }
-            else { Console.WriteLine("NO"); }
-            Console.ReadKey();
-         }
+        //    for (int i = 0; i < N /2;i++)
+        //    {
+        //        if (arr[i] != arr[ N - 1 - i ])
+        //        {
+        //            ispalindrome = false;
+        //            break;
+        //        }    
+        //    }
+        //    if (ispalindrome)
+        //    {
+        //        Console.WriteLine("YES");
+        //    }
+        //    else { Console.WriteLine("NO"); }
+        //    Console.ReadKey();
+        // }
 
         #endregion
 
+        #region Q3
+        public static void Main(string[] args) 
+        {
+            Queue<int> queue = new Queue<int>();
+             
+            queue.Enqueue(1);
+            queue.Enqueue(2);
+            queue.Enqueue(3);
+            queue.Enqueue(4);
+            foreach (var item in queue)
+            {
+                Console.Write(item + " ");
+            }
+
+            ReverseQueue(queue);
+            Console.WriteLine("\n after reverse");
+
+            foreach (var item in queue)
+            { Console.Write(item + " "); }
+
+        }
+
+     
+
+        static void ReverseQueue(Queue<int> queue) 
+        {
+            Stack <int> stack = new Stack<int>();
+
+            while (queue.Count > 0) 
+            {
+            stack.Push(queue.Dequeue());
+            }
+            while (stack.Count > 0)
+            {
+                queue.Enqueue(stack.Pop());
+            }
+
+        }
+
+
+
+        #endregion
 
 
     }
