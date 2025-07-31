@@ -62,42 +62,76 @@ namespace Demo
         #endregion
 
         #region Q3
+        //public static void Main(string[] args) 
+        //{
+        //    Queue<int> queue = new Queue<int>();
+
+        //    queue.Enqueue(1);
+        //    queue.Enqueue(2);
+        //    queue.Enqueue(3);
+        //    queue.Enqueue(4);
+        //    foreach (var item in queue)
+        //    {
+        //        Console.Write(item + " ");
+        //    }
+
+        //    ReverseQueue(queue);
+        //    Console.WriteLine("\n after reverse");
+
+        //    foreach (var item in queue)
+        //    { Console.Write(item + " "); }
+
+        //}
+
+
+
+        //static void ReverseQueue(Queue<int> queue) 
+        //{
+        //    Stack <int> stack = new Stack<int>();
+
+        //    while (queue.Count > 0) 
+        //    {
+        //    stack.Push(queue.Dequeue());
+        //    }
+        //    while (stack.Count > 0)
+        //    {
+        //        queue.Enqueue(stack.Pop());
+        //    }
+
+        //}
+
+
+
+        #endregion
+
+        #region Q4
         public static void Main(string[] args) 
         {
-            Queue<int> queue = new Queue<int>();
-             
-            queue.Enqueue(1);
-            queue.Enqueue(2);
-            queue.Enqueue(3);
-            queue.Enqueue(4);
-            foreach (var item in queue)
-            {
-                Console.Write(item + " ");
-            }
-
-            ReverseQueue(queue);
-            Console.WriteLine("\n after reverse");
-
-            foreach (var item in queue)
-            { Console.Write(item + " "); }
-
+            string input = Console.ReadLine();
+            bool CheckBalance = Isbalanced(input);
+            Console.WriteLine(CheckBalance ? "Balance" : "UnBalance");     
+        
         }
-
-     
-
-        static void ReverseQueue(Queue<int> queue) 
+        static bool Isbalanced(string a) 
         {
-            Stack <int> stack = new Stack<int>();
-
-            while (queue.Count > 0) 
+            Stack<char> stack = new Stack<char>();
+            foreach (char c in a) 
             {
-            stack.Push(queue.Dequeue());
-            }
-            while (stack.Count > 0)
-            {
-                queue.Enqueue(stack.Pop());
-            }
+                if (c == '[' ||  c == '{' ||  c == '('  ) 
+                {
+                    stack.Push(c);
+                }
+                else if (c==']' || c=='}' || c== ')' )
+                 {
+                    if (stack.Count== 0) return false;
+                    char top = stack.Pop();
+                   
+                 }
 
+
+            }
+            return stack.Count == 0;
+        
         }
 
 
