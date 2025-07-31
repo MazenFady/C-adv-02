@@ -105,34 +105,51 @@ namespace Demo
         #endregion
 
         #region Q4
+        //public static void Main(string[] args) 
+        //{
+        //    string input = Console.ReadLine();
+        //    bool CheckBalance = Isbalanced(input);
+        //    Console.WriteLine(CheckBalance ? "Balance" : "UnBalance");     
+
+        //}
+        //static bool Isbalanced(string a) 
+        //{
+        //    Stack<char> stack = new Stack<char>();
+        //    foreach (char c in a) 
+        //    {
+        //        if (c == '[' ||  c == '{' ||  c == '('  ) 
+        //        {
+        //            stack.Push(c);
+        //        }
+        //        else if (c==']' || c=='}' || c== ')' )
+        //         {
+        //            if (stack.Count== 0) return false;
+        //            char top = stack.Pop();
+
+        //         }
+
+
+        //    }
+        //    return stack.Count == 0;
+
+        //}
+
+
+
+        #endregion
+
+        #region Q5
         public static void Main(string[] args) 
         {
-            string input = Console.ReadLine();
-            bool CheckBalance = Isbalanced(input);
-            Console.WriteLine(CheckBalance ? "Balance" : "UnBalance");     
-        
-        }
-        static bool Isbalanced(string a) 
-        {
-            Stack<char> stack = new Stack<char>();
-            foreach (char c in a) 
+            int[] arr = [1, 2, 3, 4, 5, 6, 6, 5, 4, 9, 10];
+        HashSet<int> numbers = new HashSet<int>(arr);
+            foreach (int item in numbers) 
             {
-                if (c == '[' ||  c == '{' ||  c == '('  ) 
-                {
-                    stack.Push(c);
-                }
-                else if (c==']' || c=='}' || c== ')' )
-                 {
-                    if (stack.Count== 0) return false;
-                    char top = stack.Pop();
-                   
-                 }
-
-
+                Console.WriteLine(item);
             }
-            return stack.Count == 0;
-        
+
         }
+
 
 
 
